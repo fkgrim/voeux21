@@ -30,10 +30,10 @@
       }
 
       //image pleine largeur
-      var winlarg = window.innerWidth;
+      /*var winlarg = window.innerWidth;
       var largeur = Math.min(winlarg,900)+'px'
       var aspectRatio = 900 / 450;
-      var hauteur= (largeur / aspectRatio) + 'px';
+      var hauteur= (largeur / aspectRatio) + 'px';*/
 
 
 
@@ -42,7 +42,7 @@
 
       // Make sure we sett style width height here for elastic stretch
       // and better support for mobile if we are resizing the scratch pad.
-      this.$scratchpad = $(this.canvas).css({position: 'absolute', width: largeur, height: hauteur});
+      this.$scratchpad = $(this.canvas).css({position: 'absolute', width: '100%', height: '100%'});
       
       this.$scratchpad.bindMobileEvents();
 

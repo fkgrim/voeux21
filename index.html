@@ -15,9 +15,14 @@
       cursor: pointer;
     }
 
+    html,body{height:100%}
+
 
     body.dark{
       background-color: #282728;
+      background: linear-gradient(0deg, rgba(57,103,127,1) 0%, rgba(53,158,135,1) 100%);
+      background-repeat: no-repeat;
+
       color:#FFFFFF
     }
 
@@ -57,10 +62,10 @@ display: none;
 
   <script type="text/javascript" src="./lib/jquery.1.11.0.min.js"></script>
 </head>
-<body id="body" class="dark" onload="$('#visuel').wScratchPad('enable', false);">
+<body id="body" class="dark" onload="$('#visuel').wScratchPad('enable', true);">
 
 
-  <div id="content" class="container">
+  <div id="content" class="container" style="width: 375px">
     <div class="row okDark koLight">
       <div class="col mt-3 mb-3">
         <h1  onclick="$('#visuel').wScratchPad('reset');">Enfin nous passons à une nouvelle année</h1>
@@ -77,16 +82,16 @@ display: none;
 
         <p>Gommons les mauvais souvenirs de 2020 pour laisser de la place aux futurs souvenirs que nous allons créer en 2021.</p>
       </div>
-      <div class="col mt-3 mb-3">
+      <!--<div class="col mt-3 mb-3">
         <small>Cliquez sur la gomme et effacez 2020, on compte sur vous.</small>
         <div class="col mx-auto">
 <img src="cursors/gomme.png" class="mx-auto" alt="" style="width: 80px" onclick="$('#visuel').wScratchPad('enable', true);">
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="row">
-      <div  class="col" style="overflow-x: hidden">
-        <div id="visuel" class="scratchpad" style="width: 100%" ></div>
+      <div  class="col" >
+        <div id="visuel" class="scratchpad" ></div>
       </div>
 
 
@@ -100,33 +105,11 @@ display: none;
 
       <style>
         .scratchpad {
-          width: 900px;
-          height: 450px;
+          width: 375px;
+          height: calc(375px * 450/900);
         }
 
-        @media (max-width: 375px) {
-          .scratchpad {
-            width: 36%;
-          }
-        }
 
-        @media (max-width: 665px) {
-          .scratchpad {
-            width: 54%;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .scratchpad {
-            width: 75%;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          .scratchpad {
-            width: 100%;
-          }
-        }
 
       </style>
 
@@ -134,9 +117,6 @@ display: none;
       <script type="text/javascript">
 
 
-        var visuel = document.getElementById('visuel');
-        var largeur = window.innerWidth;
-        visuel.style.width = largeur + 'px';
 
 
     /*    $(document).ready(function() {
@@ -173,7 +153,7 @@ display: none;
           }
         });
 
-        $('#visuel').wScratchPad('enable', false);
+        $('#visuel').wScratchPad('enable', true);
 
         window.addEventListener('orientationchange', function(){
           $('#visuel').wScratchPad('reset');
