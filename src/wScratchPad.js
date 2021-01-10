@@ -37,7 +37,7 @@
 
 
 
-      this.$img = $('<img src=""/>').attr('crossOrigin', '').css({position: 'absolute', width: largeur, height: hauteur});
+      this.$img = $('<img src=""/>').attr('crossOrigin', '').css({position: 'absolute', width: '100%', height: '100%'});
 
 
       // Make sure we sett style width height here for elastic stretch
