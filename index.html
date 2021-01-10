@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>Meilleurs voeux!</title>
+  <style>
+
+    h1{
+      cursor: pointer;
+    }
+
+
+    body.dark{
+      background-color: #282728;
+      color:#FFFFFF
+    }
+
+    body.light{
+      background-color: #FFFFFF;
+      color: #282728
+    }
+
+
+    body.dark  .okDark{
+
+    }
+
+    body.dark  .koDark{
+display: none;
+    }
+    body.light  .okLight{
+
+    }
+
+    body.light  .koLight{
+      display: none;
+    }
+
+  </style>
+  <script type="text/javascript" src="./lib/jquery.1.11.0.min.js"></script>
+</head>
+<body id="body" class="dark" onload="$('#visuel').wScratchPad('enable', false);">
+
+
+  <div id="content" class="container">
+    <div class="row okDark koLight">
+      <div class="col mt-3 mb-3">
+        <h1  onclick="$('#visuel').wScratchPad('reset');">Enfin nous passons à une nouvelle année</h1>
+      </div>
+    </div>
+    <div class="row koDark">
+      <div class="col mt-3 mb-3">
+        <h1  onclick="$('#visuel').wScratchPad('reset');">Merci, on est en 2021</h1>
+      </div>
+    </div>
+
+    <div class="row koLight">
+      <div class="col mt-3 mb-3">
+
+        <p>Gommons les mauvais souvenirs de 2020 pour laisser de la place aux futurs souvenirs que nous allons créer en 2021.</p>
+      </div>
+      <div class="col mt-3 mb-3">
+        <small>Cliquez sur la gomme et effacez 2020, on compte sur vous.</small>
+        <div class="col mx-auto">
+<img src="cursors/gomme.png" class="mx-auto" alt="" style="width: 80px" onclick="$('#visuel').wScratchPad('enable', true);">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col11 p2 mx-auto">
+        <div id="visuel" class="scratchpad"></div>
+      </div>
+      <div class="row koDark">
+        <div class="col mt-3 mb-3">
+          <p>Marjorie et Franck vous souhaite une très bonne année 2021</p>
+        </div>
+      </div>
+
+      <style>
+        .scratchpad{
+          width: 100%;
+          height: 450px;
+        }
+
+        /*@media (max-width: 500px) {
+          .scratchpad {
+            width: 65%;
+          }*/
+
+        }
+      </style>
+
+      <script type="text/javascript" src="./wScratchPad.min.js"></script>
+      <script type="text/javascript">
+        $('#visuel').wScratchPad({
+          size:20,
+          bg: './images/2021.gif',
+          fg: './images/2020.jpg',
+          'cursor': 'url("./cursors/gomme-80.gif") 20 20, pointer',
+          scratchMove: function (e, percent) {
+            $('#demo1-percent').html(percent);
+            if (percent > 70) {
+              this.clear();
+              $('#body').removeClass("dark");
+              $("body").addClass("light");
+            }
+          }
+        });
+        $('#visuel').wScratchPad('enable', false);
+
+      </script>
+      
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</body>
+</html>
