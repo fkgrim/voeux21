@@ -99,9 +99,9 @@ display: none;
       <script type="text/javascript" src="./wScratchPad.min.js"></script>
       <script type="text/javascript">
 
-        $('#visuel').wScratchPad('enable', false);
 
-        $(document).ready(function() {
+
+    /*    $(document).ready(function() {
 
           var $w = $(window),
                   $h = $('#visuel'),
@@ -118,7 +118,7 @@ display: none;
           $w.resize(resizeBg);
           $w.onload=resizeBg();
 
-        });
+        });*/
 
         $('#visuel').wScratchPad({
           size:20,
@@ -134,6 +134,8 @@ display: none;
             }
           }
         });
+
+        $('#visuel').wScratchPad('enable', false);
 
       </script>
       
