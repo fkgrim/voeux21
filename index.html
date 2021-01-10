@@ -98,20 +98,7 @@ display: none;
 
       <script type="text/javascript" src="./wScratchPad.min.js"></script>
       <script type="text/javascript">
-        $('#visuel').wScratchPad({
-          size:20,
-          bg: './images/2021.gif',
-          fg: './images/2020.jpg',
-          'cursor': 'url("./cursors/gomme-80.gif") 20 20, pointer',
-          scratchMove: function (e, percent) {
-            $('#demo1-percent').html(percent);
-            if (percent > 70) {
-              this.clear();
-              $('#body').removeClass("dark");
-              $("body").addClass("light");
-            }
-          }
-        });
+
         $('#visuel').wScratchPad('enable', false);
 
         $(document).ready(function() {
@@ -131,6 +118,21 @@ display: none;
           $w.resize(resizeBg);
           $w.onload=resizeBg();
 
+        });
+
+        $('#visuel').wScratchPad({
+          size:20,
+          bg: './images/2021.gif',
+          fg: './images/2020.jpg',
+          'cursor': 'url("./cursors/gomme-80.gif") 20 20, pointer',
+          scratchMove: function (e, percent) {
+            $('#demo1-percent').html(percent);
+            if (percent > 70) {
+              this.clear();
+              $('#body').removeClass("dark");
+              $("body").addClass("light");
+            }
+          }
         });
 
       </script>
