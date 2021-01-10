@@ -114,6 +114,25 @@ display: none;
         });
         $('#visuel').wScratchPad('enable', false);
 
+        $(document).ready(function() {
+
+          var $w = $(window),
+                  $h = $('#visuel'),
+                  aspectRatio = 900 / 450;
+
+          function resizeBg() {
+            $h.width($w.width());
+            if( ( $h.width()/aspectRatio ) <= $("> .container", $h).height() ) {
+              $h.width( $(" > .container", $h).height()*aspectRatio );
+            }
+            $h.height( $h.width()/aspectRatio);
+          }
+
+          $w.resize(resizeBg);
+          $w.onload=resizeBg();
+
+        });
+
       </script>
       
     </div>
