@@ -16,7 +16,7 @@
 
       // Throw message if canvas is not supported.
       if (!$.support.canvas) {
-        this.$el.append('Canvas is not supported in this browser.');
+        this.$el.append('Canvas n\'est pas supporté avec ce navigateur');
         return true;
       }
 
@@ -29,11 +29,20 @@
         this.$el.css('position', 'relative');
       }
 
-      this.$img = $('<img src=""/>').attr('crossOrigin', '').css({position: 'absolute', width: '100%', height: '100%'});
+      //image pleine largeur
+      var winlarg = window.innerWidth;
+      var largeur = Math.min(winlarg,900)+'px'
+      var aspectRatio = 900 / 450;
+      var hauteur= (largeur / aspectRatio) + 'px';
+
+
+
+      this.$img = $('<img src=""/>').attr('crossOrigin', '').css({position: 'absolute', width: largeur, height: hauteur});
+
 
       // Make sure we sett style width height here for elastic stretch
       // and better support for mobile if we are resizing the scratch pad.
-      this.$scratchpad = $(this.canvas).css({position: 'absolute', width: '100%', height: '100%'});
+      this.$scratchpad = $(this.canvas).css({position: 'absolute', width: largeur, height: hauteur});
       
       this.$scratchpad.bindMobileEvents();
 

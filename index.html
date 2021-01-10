@@ -43,6 +43,18 @@ display: none;
     }
 
   </style>
+<!--  <script>
+    var largeur = window.innerWidth;
+
+    document.open();
+    document.write("<style>scratchpad{width:");
+    console.log("largeur :" + largeur);
+    document.write(largeur);
+    document.write("px}</style>");
+    document.close();
+  </script>-->
+
+
   <script type="text/javascript" src="./lib/jquery.1.11.0.min.js"></script>
 </head>
 <body id="body" class="dark" onload="$('#visuel').wScratchPad('enable', false);">
@@ -73,32 +85,58 @@ display: none;
       </div>
     </div>
     <div class="row">
-      <div  class="col11 p2 mx-auto">
-        <div id="visuel" class="scratchpad"></div>
+      <div  class="col" style="overflow-x: hidden">
+        <div id="visuel" class="scratchpad" style="width: 100%" ></div>
       </div>
+
+
+
       <div class="row koDark">
         <div class="col mt-3 mb-3 text-center">
           <p>Marjorie et Franck vous souhaite une très bonne année 2021</p>
         </div>
       </div>
 
+
       <style>
-        .scratchpad{
-          width: 100%;
+        .scratchpad {
+          width: 900px;
           height: 450px;
         }
 
-        /*@media (max-width: 500px) {
+        @media (max-width: 375px) {
           .scratchpad {
-            width: 65%;
-          }*/
-
+            width: 36%;
+          }
         }
+
+        @media (max-width: 665px) {
+          .scratchpad {
+            width: 54%;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .scratchpad {
+            width: 75%;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .scratchpad {
+            width: 100%;
+          }
+        }
+
       </style>
 
       <script type="text/javascript" src="./wScratchPad.min.js"></script>
       <script type="text/javascript">
 
+
+        var visuel = document.getElementById('visuel');
+        var largeur = window.innerWidth;
+        visuel.style.width = largeur + 'px';
 
 
     /*    $(document).ready(function() {
@@ -136,6 +174,10 @@ display: none;
         });
 
         $('#visuel').wScratchPad('enable', false);
+
+        window.addEventListener('orientationchange', function(){
+          $('#visuel').wScratchPad('reset');
+        });
 
       </script>
       
